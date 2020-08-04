@@ -8,7 +8,6 @@
 // console.log(getItemsString.join(","));
 const getItemsString = function (array) {
   let result = "";
-  //   const message = `${number} - ${argument} \n`;
   for (let i = 0; i < array.length; i += 1) {
     result += `${i + 1} - ${array[i]} \n`;
   }
@@ -16,15 +15,15 @@ const getItemsString = function (array) {
 };
 console.log(getItemsString(["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"]));
 console.log(getItemsString([5, 10, 15]));
-/*
-'1 - Mango
-2 - Poly
-3 - Ajax
-4 - Lux
-5 - Jay
-6 - Kong
-'
-*/
+// /*
+// '1 - Mango
+// 2 - Poly
+// 3 - Ajax
+// 4 - Lux
+// 5 - Jay
+// 6 - Kong
+// '
+// */
 
 //console.log(getItemsString([5, 10, 15]));
 /*
@@ -33,3 +32,26 @@ console.log(getItemsString([5, 10, 15]));
 3 - 15
 '
 */
+// const getItemsString = function (array) {
+//   let result = [];
+//   let red = 0;
+//   for (let i = 1; i <= array.length; i += 1) {
+//     result.push(`${i} - ${array[red]}`);
+//     red += 1;
+//   }
+
+//   const ger = result.join("\n");
+//   return ger;
+// };
+// const getItemsString = function (array) {
+//   let result = "";
+
+//   for (let i = 0; i < array.length; i += 1) {
+//     // console.log(array[i]);
+//     // console.log(i + 1);
+//     const der = `${i + 1} - ${array[i]}`;
+
+//     result = `${result} \n ${der}`;
+//   }
+//   console.log(typeof result);
+// };

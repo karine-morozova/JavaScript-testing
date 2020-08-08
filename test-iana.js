@@ -65,49 +65,46 @@
 
 // console.log(reduceArray([1, 2, 2.5]));
 // // 5.5
-function isLoginValid(login, min = 4, max = 16) {
-  if (login.length >= min && login.length <= max) {
-    return true;
+const findBestEmployee = function (employees) {
+  const allEmployees = Object.entries(employees);
+  let bestValue = 0;
+  let bestEmployee = "";
+  console.log(allEmployees);
+  for (const employee of allEmployees) {
+    if (employee[1] > bestValue) {
+      bestValue = employee[1];
+      bestEmployee = employee[0];
+    }
+    // console.log(employee[1]);
+    // console.log(employee[0]);
   }
-  return false;
-}
 
-function isLoginUnique(allLogins, login) {
-  if (allLogins.includes(login)) {
-    return false;
-  }
-  return true;
-}
+  console.log(bestEmployee);
+};
 
-function addLogin(allLogins, login) {
-  const SUCCESS = "Логин успешно добавлен!";
-  const REFUSAL = "Такой логин уже используется!";
-  const ERROR = "Ошибка! Логин должен быть размером от 4 до 16 символов";
-  let message;
+// Объекты и ожидаемый результат
+const developers = {
+  ann: 29,
+  david: 35,
+  helen: 1,
+  lorence: 99,
+};
+console.log(findBestEmployee(developers));
+// 'lorence'
 
-  if (!isLoginValid(login)) {
-    message = ERROR;
-    return message;
-  } else if (!isLoginUnique(allLogins, login)) {
-    message = REFUSAL;
-    return message;
-  } else {
-    allLogins.push(login);
-    message = SUCCESS;
-    return message;
-  }
-}
+const supports = {
+  poly: 12,
+  mango: 17,
+  ajax: 4,
+};
+console.log(findBestEmployee(supports));
+// 'mango'
 
-const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
-
-console.log(addLogin(logins, "Ajax"));
-// 'Логин успешно добавлен!'
-
-console.log(addLogin(logins, "robotGoogles"));
-// 'Такой логин уже используется!'
-
-console.log(addLogin(logins, "Zod"));
-// 'Ошибка! Логин должен быть от 4 до 16 символов'
-
-console.log(addLogin(logins, "jqueryisextremelyfast"));
-// 'Ошибка! Логин должен быть от 4 до 16 символов'
+const sellers = {
+  lux: 147,
+  david: 21,
+  kiwi: 19,
+  chelsy: 38,
+};
+console.log(findBestEmployee(sellers));
+// 'lux'

@@ -5,10 +5,13 @@
 
 function calculateTotalPrice(array, prop) {
   let total = 0;
-  for (const [price, quantity] of products) {
-    total += price * quantity;
-    console.log(total);
+
+  for (const product of products) {
+    if (product.name === prop) {
+      total += product.price * product.quantity;
+    }
   }
+  return total;
 }
 
 // Объекты и ожидаемый результат
@@ -25,11 +28,11 @@ const products = [
 console.log(calculateTotalPrice(products, "Радар"));
 // 9080
 
-//console.log(calculateTotalPrice(products, 'Сканер'));
+console.log(calculateTotalPrice(products, "Сканер"));
 // 10200
 
-//console.log(calculateTotalPrice(products, 'Захват'));
+console.log(calculateTotalPrice(products, "Захват"));
 // 2400
 
-//console.log(calculateTotalPrice(products, 'Дроид'));
+console.log(calculateTotalPrice(products, "Дроид"));
 // 2800

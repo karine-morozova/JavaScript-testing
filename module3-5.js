@@ -8,13 +8,11 @@
 function getAllPropValues(array, prop) {
   let productsValue = [];
   for (const product of products) {
-    console.log(product);
     if (product[prop]) {
       productsValue.push(product[prop]);
     }
-
-    // console.log(product);
   }
+
   return productsValue;
 }
 
@@ -32,8 +30,7 @@ const products = [
 console.log(getAllPropValues(products, "name"));
 // ['Радар', 'Радар', 'Радар', 'Сканер', 'Сканер', 'Дроид', 'Захват']
 
-// console.log(getAllPropValues(products, "quantity"));
+console.log(getAllPropValues(products, "quantity"));
 // [4, 2, 1, 1, 3, 7, 2]
 
 console.log(getAllPropValues(products, "category"));
-//  []

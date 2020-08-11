@@ -143,3 +143,68 @@ readyDish("pasta");
 const tastyDish = prepareDish("Poly");
 tastyDish("soup");
 tastyDish("steak");
+
+// THIS
+
+const kari = {
+  name: "Kari",
+  showThis() {
+    console.log(this);
+  },
+  showName() {
+    console.log(this.name);
+  },
+};
+kari.showThis();
+kari.showName();
+
+function globalFunction() {
+  console.log("this in showThis: ", this);
+}
+// Вызываем в глобальном контексте
+globalFunction();
+
+const iana = { name: "mango" };
+// Записываем ссылку на функцию в свойство объекта
+// Обратите внимание, что это не вызов - нет()
+
+iana.showContext = globalFunction;
+iana.showContext();
+
+// This в function callback
+const hotel = {
+  name: "Mango",
+  showThis() {
+    console.log(this);
+  },
+};
+
+const fn = function (callback) {
+  callback();
+};
+fn(hotel.showThis);
+
+// This в стрелочной function
+
+const tryThis = () => {
+  console.log("Show in this: ", this);
+};
+tryThis();
+
+const gas = {
+  name: "Gas",
+};
+gas.showContext = tryThis;
+gas.showContext();
+
+const adele = {
+  name: "Adele",
+  showThis() {
+    const fn = () => {
+      console.log("This is: ", this);
+    };
+    fn();
+    console.log("This is: ", this);
+  },
+};
+adele.showThis();

@@ -208,3 +208,64 @@ const adele = {
   },
 };
 adele.showThis();
+
+// Methods call & apply
+
+const greet = function () {
+  return `Welcome to ${this.name} hotel!`;
+};
+const hotell = {
+  name: "Grand Resort",
+};
+console.log(greet.call(hotell));
+console.log(greet.apply(hotell));
+
+// Call & arguments
+
+const great = function (guest, stars) {
+  return `${guest}, welcome to ${stars}-star ${this.name}!`;
+};
+const guestHouse = {
+  name: "Grand Resort",
+};
+const motel = {
+  name: "Blue lagoon",
+};
+console.log(great.call(guestHouse, "Mango", 5));
+console.log(great.call(motel, "Poly", 4));
+
+// Apply & arguments
+
+const creet = function (guest, stars) {
+  return `${guest}, welcome to ${stars}-star ${this.name}!`;
+};
+const guestHome = {
+  name: "Grand Resort",
+};
+const aparts = {
+  name: "Blue lagoon",
+};
+console.log(creet.apply(guestHome, ["Mango", 5]));
+console.log(creet.apply(aparts, ["Poly", 4]));
+
+// Bind
+
+const build = function (guest) {
+  return `${guest}, welcome to ${this.name} hotel!`;
+};
+const home = {
+  name: "Grand Resort",
+};
+const homeGreeted = build.bind(home, "Ajax");
+homeGreeted();
+
+const hote = {
+  name: "Grand",
+  showThis() {
+    console.log(this);
+  },
+};
+const fun = function (callback) {
+  callback();
+};
+fun(hote.showThis.bind(hote));

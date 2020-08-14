@@ -25,7 +25,6 @@ function reduceArray(array, cb, initial) {
   for (i; i < array.length; i += 1) {
     const element = array[i];
     accum = cb(accum, element);
-    // Write code under this line
   }
   return accum;
 }
@@ -39,4 +38,4 @@ console.log(reduceArray(arr, mult)); // 120
 console.log(reduceArray(arr, mult, 10)); // 1200
 
 console.log(reduceArray(arr, sub)); // -13
-console.log(reduceArray(arr, sub, 10)); // -5
+console.log(reduceArray(arr, sub, 10));

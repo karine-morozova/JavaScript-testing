@@ -19,7 +19,7 @@ class StringBuilder {
   }
 
   append(str) {
-    this._value += str;
+    return (this._value += str);
   }
 
   prepend(str) {
@@ -27,7 +27,8 @@ class StringBuilder {
   }
 
   pad(str) {
-    return this.prepend();
+    this.prepend(str);
+    this.append(str);
   }
 }
 

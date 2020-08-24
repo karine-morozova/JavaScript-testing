@@ -215,3 +215,36 @@ const tagsCount = countTags(taggs);
 
 console.log(countTags(taggs));
 console.log(tagsCount);
+
+// array.prototype.sort()
+
+const grades = [2, 7, 1, 9, 4, 6, 3];
+console.log(grades.sort());
+
+const friends = ["Yaroslava", "Kari", "July"];
+
+console.log(friends.sort());
+
+// свой порядок сортировки
+
+const clients = [
+  { name: "Mango", daysActive: 15 },
+  { name: "Poly", daysActive: 4 },
+  { name: "Ajax", daysActive: 27 },
+  { name: "Chelsey", daysActive: 2 },
+];
+
+const sortByActiveDays = (a, b) => a.daysActive - b.daysActive;
+
+console.log(clients.sort(sortByActiveDays));
+
+// Цепочка методов массива
+
+const smth = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const filteredSmth = smth
+  .filter((x) => x % 2 === 0)
+  .map((y) => y * 2)
+  .reverse();
+
+console.log(filteredSmth);

@@ -108,12 +108,16 @@ const users = [
     age: 39,
   },
 ];
-
-const names = [...users];
-console.log(names);
+// Copy array
+// const sortedUsers = users.concat();
+// const sortedUsers = users.slice();
+// const sortedUsers = [...users];
 
 const getNamesSortedByFriendsCount = (array) =>
-  array.sort(({ friends }) => friends).map(({ name }) => name);
+  [...array]
+    .sort((a, b) => a.friends.length - b.friends.length)
+    .map(({ name }) => name);
 
 console.log(getNamesSortedByFriendsCount(users));
+
 // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
